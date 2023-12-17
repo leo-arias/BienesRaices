@@ -23,7 +23,7 @@ class Router {
         $rutas_protegidas = ['/admin', '/propiedades/crear', '/propiedades/actualizar', '/propiedades/eliminar', '/vendedores/crear', '/vendedores/actualizar', '/vendedores/eliminar'];
 
         // Obtener la URL actual
-        $urlActual = strtok($_SERVER['REQUEST_URI'], '?') ?? '/';
+        $urlActual = $_SERVER['PATH_INFO'] ?? '/';
         $metodo = $_SERVER['REQUEST_METHOD'];
 
         // Proteger las rutas
